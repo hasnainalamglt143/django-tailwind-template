@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>change profile </title>
+{% endblock %}
+{% block content %}
+<div class="w-full h-auto p-8 mt-10 mb-12 ">
+   <h1
+      class="mb-4 text-xl font-semibold leading-tight tracking-tight text-center text-gray-900 capitalize md:text-3xl dark:text-white">
+      update profile!
+   </h1>
+   <form class="flex flex-wrap items-center justify-between w-11/12 p-6 mx-auto space-y-4 md:space-y-8"
+      action="{% url 'update-profile' %}" method="post" style="background-color:rgba(128, 128, 128, 0.103);"
+      id="change-prifile-form">
+      {% csrf_token %}
+      <div class="w-full md:w-2/5">
+         <label for="first_name" class="block mb-2 text-lg font-medium text-gray-900 dark:text-white">First Name</label>
+         <input type="text" name="first_name" id="first_name"
+            class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-primary-600 focus:border-primary-600 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="" required="">
+      </div>
+      <div class="w-full md:w-2/5">
+         <label for="last_name" class="block mb-2 text-lg font-medium text-gray-900 dark:text-white">Last Name</label>
+         <input type="text" name="last_name" id="last_name"
+            class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-primary-600 focus:border-primary-600 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="" required="">
+      </div>
+      <div class="w-full md:w-2/5">
+         <label for="username" class="block mb-2 text-lg font-medium text-gray-900 dark:text-white">Username</label>
+         <input type="username" name="username" id="username"
+            class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-primary-600 focus:border-primary-600 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="" required="">
+      </div>
+      <div class="w-full md:w-2/5">
+         <label for="password" class="block mb-2 text-lg font-medium text-gray-900 dark:text-white">Password</label>
+         <input type="password" name="password" id="password" placeholder="fill if you wanna change password"
+            class="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-primary-600 focus:border-primary-600 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+      </div>
+      <div class="w-full md:w-2/5">
+         <button type="submit"
+            class="w-1/2 md:w-1/2 mx-auto text-white bg-indigo-800 hover:bg-indigo-900 focus:ring-4 focus:outline-none focus:ring-bg-indigo-800 font-medium rounded-lg text-lg px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">update
+            profile </button>
+      </div>
+   </form>
+</div>
+{% endblock %}
